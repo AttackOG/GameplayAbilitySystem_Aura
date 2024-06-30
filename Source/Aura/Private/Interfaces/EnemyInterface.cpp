@@ -1,12 +1,6 @@
 // GamePlayAbilitySystem course followed by AttackOG. Course was created by Stephen Ulibarri, founder of Druid Mechanics. Thank you!
 
 
-#include "Character/AuraEnemy.h"
+#include "Interfaces/EnemyInterface.h"
 
-void AAuraEnemy::HighlightActor()
-{
-}
-
-void AAuraEnemy::UnHighlightActor()
-{
-}
+// Add default functionality here for any IEnemyInterface functions that are not pure virtual.
