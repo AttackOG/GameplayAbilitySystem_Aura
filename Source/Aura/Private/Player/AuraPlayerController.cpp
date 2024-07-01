@@ -1,7 +1,7 @@
 // GamePlayAbilitySystem course followed by AttackOG. Course was created by Stephen Ulibarri, founder of Druid Mechanics. Thank you!
 
 
-#include "PlayerController/AuraPlayerController.h"
+#include "Player/AuraPlayerController.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "Interfaces/EnemyInterface.h"

@@ -2,7 +2,6 @@
 
 
 #include "Character/AuraEnemy.h"
-
 #include "Aura/Aura.h"
 
 AAuraEnemy::AAuraEnemy()
