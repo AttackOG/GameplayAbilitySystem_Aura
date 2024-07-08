@@ -28,6 +28,8 @@ protected:
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
 
+	virtual void InitializeAbilityActorInfo();
+
 public:
 	// Get attribute stuff.
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
