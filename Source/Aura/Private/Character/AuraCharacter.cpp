@@ -37,7 +37,7 @@ void AAuraCharacter::InitializeAbilityActorInfo()
 				AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState, AbilitySystemComponent, AttributeSet);
 			}
 		}
-		InitializePrimaryAttributes();
+		InitializeDefaultAttributes();
 	}
 }
 
@@ -55,6 +55,13 @@ void AAuraCharacter::OnRep_PlayerState()
 
 	// Initialize ability info for the client.
 	InitializeAbilityActorInfo();
+}
+
+int32 AAuraCharacter::GetPlayerLevel()
+{
+	const AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();
+	check(AuraPlayerState);
+	return AuraPlayerState->GetPlayerLevel();
 }
 
 
