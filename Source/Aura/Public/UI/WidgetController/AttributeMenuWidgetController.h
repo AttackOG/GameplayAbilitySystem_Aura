@@ -21,6 +21,7 @@ class AURA_API UAttributeMenuWidgetController : public UAuraWidgetController
 public:
 	virtual void BroadcastInitialValues() override;
 	virtual void BindCallbacksToDependencies() override;
+	void BroadcastAttributeInfo(const FGameplayTag& AttributeTag, const FGameplayAttribute& Attribute) const;
 
 	UPROPERTY(BlueprintAssignable, Category = "Gas|Attributes")
 	FAttributeInfoSignature AttributeInfoDelegate;
