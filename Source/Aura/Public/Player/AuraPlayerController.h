@@ -38,9 +38,15 @@ private:
 	TObjectPtr<UInputMappingContext> AuraContext;
 	UPROPERTY(EditAnywhere, Category = Input)
 	TObjectPtr<UInputAction>MoveAction;
+	UPROPERTY(EditAnywhere, Category = Input)
+	TObjectPtr<UInputAction>ShiftAction;
 
 	void Move(const FInputActionValue& InputActionValue);
 	void CursorTrace();
+	void ShiftPressed() { bShiftKeyDown = true; };
+	void ShiftReleased() { bShiftKeyDown = false; };
+	bool bShiftKeyDown = false;
+	
 	TScriptInterface<IEnemyInterface> LastActor;
 	TScriptInterface<IEnemyInterface> ThisActor;
 
@@ -60,8 +66,8 @@ private:
 
 	//initial values. Lecture 105 setting up click to move.
 	FVector CachedDestination = FVector::ZeroVector;
-	float FollowTime = 0.f;
-	float ShortPressThreshold = 0.3f;
+	float FollowTime = 0.f; //how long we have been following the mouse cursor for.
+	float ShortPressThreshold = 0.5f;
 	bool bAutoRunning = false;
 	bool bTargetting = false;
 	UPROPERTY(EditDefaultsOnly)
