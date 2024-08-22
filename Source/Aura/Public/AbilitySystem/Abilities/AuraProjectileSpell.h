@@ -6,6 +6,7 @@
 #include "AbilitySystem/Abilities/AuraGameplayAbility.h"
 #include "AuraProjectileSpell.generated.h"
 
+class UNiagaraSystem;
 class AAuraProjectile;
 /**
  * 
@@ -22,6 +23,6 @@ protected:
 	TSubclassOf<AAuraProjectile> ProjectileClass;
 
 private:
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Projectile")
 	void SpawnProjectile(const FVector& ProjectileTargetLocation);
 };

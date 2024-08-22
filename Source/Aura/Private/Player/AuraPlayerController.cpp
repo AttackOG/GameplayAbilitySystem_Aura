@@ -86,6 +86,7 @@ void AAuraPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
 
 void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 {
+	//Can confirm upon releasing lmb, we do not enter this if statement.
 	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
 	{
 		if (GetASC()) GetASC()->AbilityInputTagReleased(InputTag);
@@ -115,19 +116,22 @@ void AAuraPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
 	}
 }
 
+// as far as i can tell, this function works correct as intended. 
 void AAuraPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
 {
+	//if you arent pressing lmb, do the ability of the button you are pressing. Can confirm, this code works. We arent entering this code if we press lmb.
 	if (!InputTag.MatchesTagExact(FAuraGameplayTags::Get().InputTag_LMB))
 	{
 		if (GetASC()) GetASC()->AbilityInputTagHeld(InputTag);
 		return;
 	}
 
+	//can confirm this code works to, we dont enter this code if we click lmb at some random point without pressing shift. Havent checked btarggeting but dont matter as this is an or case.
 	if (bTargetting || bShiftKeyDown)
 	{
 		if (GetASC()) GetASC()->AbilityInputTagHeld(InputTag);
 	}
-	else
+	else // can confirm we do enter the else case considering we failed the if check above.
 	{
 		FollowTime += GetWorld()->GetDeltaSeconds();
 		if (CursorHit.bBlockingHit) CachedDestination = CursorHit.ImpactPoint;

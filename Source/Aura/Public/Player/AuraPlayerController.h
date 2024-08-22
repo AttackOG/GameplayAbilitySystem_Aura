@@ -66,7 +66,7 @@ private:
 
 	//initial values. Lecture 105 setting up click to move.
 	FVector CachedDestination = FVector::ZeroVector;
-	float FollowTime = 0.f; //how long we have been following the mouse cursor for.
+	float FollowTime = 0.f;
 	float ShortPressThreshold = 0.5f;
 	bool bAutoRunning = false;
 	bool bTargetting = false;
