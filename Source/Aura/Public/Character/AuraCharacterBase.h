@@ -36,6 +36,7 @@ protected:
 	TObjectPtr<UAttributeSet> AttributeSet;
 
 	virtual void InitializeAbilityActorInfo();
+	virtual void InitializeDefaultAttributes() const;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Attributes")
 	TSubclassOf<UGameplayEffect> DefaultPrimaryAttributes;
@@ -45,8 +46,7 @@ protected:
 	TSubclassOf<UGameplayEffect> DefaultVitalAttributes;
 
 	void ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const;
-	void InitializeDefaultAttributes() const;
-
+	
 	void AddCharacterAbilities();
 
 private:
