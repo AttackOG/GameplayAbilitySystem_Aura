@@ -13,6 +13,7 @@ class UCombatInterface : public UInterface
 	GENERATED_BODY()
 };
 
+class UAnimMontage;
 /**
  * 
  */
@@ -27,4 +28,7 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void UpdateWarpTarget(const FVector& WarpTarget);
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	UAnimMontage* GetHitReactMontage();
 };
